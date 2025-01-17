@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.jcalculadora.controle;
+
+import com.mycompany.jcalculadora.enums.EnumOperacao;
 
 /**
  *
@@ -10,4 +9,29 @@ package com.mycompany.jcalculadora.controle;
  */
 public class CalculadoraController {
     
+    private Double total;
+    
+    public Double realizaOperacao(EnumOperacao operacao, Double valor ){
+        if(operacao.equals(EnumOperacao.SOMA)){
+            total = total + valor;
+        }
+        else if(operacao.equals(EnumOperacao.SUBTRACAO)){
+            total = total - valor;
+        }
+        else if(operacao.equals(EnumOperacao.DIVISAO)){
+            total = total / valor;
+        }
+           if(operacao.equals(EnumOperacao.MULTIPLICACAO)){
+            total = total + valor;
+        }
+           return total;
+    }
+    
+    public Double getTotal(){
+        return this.total;
+    }
+    
+    public void zerar(){
+        total = 0.0;
+    }
 }

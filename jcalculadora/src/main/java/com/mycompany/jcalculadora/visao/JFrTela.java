@@ -4,17 +4,23 @@
  */
 package com.mycompany.jcalculadora.visao;
 
+import com.mycompany.jcalculadora.controle.CalculadoraController;
+import com.mycompany.jcalculadora.enums.EnumOperacao;
+import java.text.NumberFormat;
+
 /**
  *
  * @author Aluno
  */
 public class JFrTela extends javax.swing.JFrame {
 
+    private CalculadoraController calculadoraController;
     /**
      * Creates new form JFrTela
      */
     public JFrTela() {
         initComponents();
+        calculadoraController = new CalculadoraController();
     }
 
     /**
@@ -176,6 +182,11 @@ public class JFrTela extends javax.swing.JFrame {
         jPanel1.add(bt3);
 
         btMais.setText("+");
+        btMais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMaisActionPerformed(evt);
+            }
+        });
         jPanel1.add(btMais);
 
         bt0.setText("0");
@@ -275,6 +286,14 @@ public class JFrTela extends javax.swing.JFrame {
         digita(",");
     }//GEN-LAST:event_btVírgulActionPerformed
 
+    private void btMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMaisActionPerformed
+       calculadoraController.realizaOperacao(EnumOperacao.SOMA, Double.NaN)
+    }//GEN-LAST:event_btMaisActionPerformed
+
+    private Double stringToDouble(String numero){
+        NumberFormat nf = NumberFormat.getInstance();
+    }
+    
     private void limpa(){
         tfValor.setText("0,00");
     }

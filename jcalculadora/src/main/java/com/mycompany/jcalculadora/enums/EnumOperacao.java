@@ -9,5 +9,9 @@ package com.mycompany.jcalculadora.enums;
  * @author Aluno
  */
 public enum EnumOperacao {
+    SOMA,
+    SUBTRACAO,
+    DIVISAO,
+    MULTIPLICACAO;
     
 }
